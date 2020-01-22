@@ -26,8 +26,8 @@ RSpec.describe "Users", type: :request do
     context "when it has invalid parameters" do
       it "does not create a user" do
         expect{
-          post users_path, params { user: { kind: '', nickname: '', level: '' } }
-      }.to_not change(User, :count)
+          post users_path, params: { user: { kind: '', nickname: '', level: '' } }
+        }.to_not change(User, :count)
       end
     end
   end
